@@ -1,0 +1,7 @@
+observed2Liability =function(prevalence,propCases,observedHsq,observedHsqSE){
+z=dnorm(qnorm(1-prevalence))
+C=(prevalence*(1-prevalence)/(z*z))*(prevalence*(1-prevalence)/(propCases*(1-propCases)))
+liabilityHsq=C*observedHsq
+liabilityHsqSE=C*observedHsqSE
+return(c(liabilityHsq,liabilityHsqSE))
+}
